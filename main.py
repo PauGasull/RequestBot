@@ -13,7 +13,6 @@ from discord.ext import commands
 from discord.commands import slash_command, Option
 import os
 
-
 # --CONSTANTS-- #
 BOT_TOKEN = 'ODUzMzUxODIxNTA5Nzg3NjU4.G8BiIC.U7SqT-AX0lz1rZuynaVgk3ZjJPOy7AlPm8NVGo'
 INTENTS = discord.Intents.default()
