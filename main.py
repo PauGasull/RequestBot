@@ -16,9 +16,10 @@ import os
 
 # --CONSTANTS-- #
 BOT_TOKEN = 'ODUzMzUxODIxNTA5Nzg3NjU4.G8BiIC.U7SqT-AX0lz1rZuynaVgk3ZjJPOy7AlPm8NVGo'
-intents = discord.Intents.default()
-intents.message_content = True
-BOT = discord.Bot(intents=intents)
+INTENTS = discord.Intents.default()
+INTENTS.message_content = True
+BOT = discord.Bot(intents=INTENTS)
+ACTIVITY = 'Petitions'
 
 
 # -- COMMANDS -- #
@@ -45,6 +46,6 @@ async def request(ctx, req: Option(str, "Your request")):
 @BOT.event
 async def on_ready():
     print(f"{BOT.user} is ready and online!")
-
+    await BOT.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=ACTIVITY))
 
 BOT.run(BOT_TOKEN)
