@@ -9,12 +9,16 @@
 
 # --INCLUDES-- #
 import discord
+import json
 from discord.ext import commands
 from discord.commands import slash_command, Option
 import os
 
 # --CONSTANTS-- #
-BOT_TOKEN = 'token'
+with open('config.json', 'r') as cfg:
+    data = json.load(cfg)
+
+BOT_TOKEN = data["token"]
 INTENTS = discord.Intents.default()
 INTENTS.message_content = True
 BOT = discord.Bot(intents=INTENTS)
